@@ -1,4 +1,5 @@
 # NullFight
+[![Build status](https://ci.appveyor.com/api/projects/status/t71wwxruiuagtyyb/branch/master?svg=true)](https://ci.appveyor.com/project/jaredswarts55/nullfight/branch/master)
 
 ## Overview
 Fights the good fight against NullReferenceException in .NET using an *Option* struct and a *Result* struct. Although very not needed in F#, useful for c#, and maybe vb (haven't looked into how the api would look here).
