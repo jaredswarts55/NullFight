@@ -1,5 +1,5 @@
 # NullFight
-Fights the good fight against NullReferenceException in .NET using a Option struct and a Result struct. Although very not needed in F#, useful for c#, and maybe vb (haven't looked into how the api would look here).
+Fights the good fight against NullReferenceException in .NET using an Option struct and a Result struct. Although very not needed in F#, useful for c#, and maybe vb (haven't looked into how the api would look here).
 
 
 
