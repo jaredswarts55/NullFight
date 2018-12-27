@@ -97,12 +97,12 @@ to be the inner value instead of the result. Allowing this to occur on one line.
 Doing this without the extension method
 
 ```csharp
-    Result<string> stringResult2 = (await stringResultTask);
+    Result<string> stringResult2 = await stringResultTask;
     string theString5 = stringResult2.Expect("My More Detailed Error");
     Assert.AreEqual(theString5, "My String");
 ```
 
-There are many tools that improve writing methods that return a Result Take a look at the method code below
+There are many tools that improve writing methods that return a Result Take a look at the method code in the same Test file linked above.
 
 ```csharp
     Result<int> intResult1 = MethodReturningResult();
