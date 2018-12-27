@@ -7,7 +7,7 @@ Fights the good fight against NullReferenceException in .NET using an *Option* s
 
 ## Result
 
-This struct is ***roughly modeled*** after the ideas that the Rust languages Result has.
+This struct is ***roughly modeled*** after the ideas that the Rust languages [Result](https://doc.rust-lang.org/std/result/) has.
 
 Result is used to specify a value or an error returned from a Service method. Something may have gone wrong during that process and rather than throw the error at that point, we can instead, throw that in our API/Application layer in a more friendly way or ignore the error if it makes sense. Services can also more consistenly handle the errors of other services returning these result objects.
 
