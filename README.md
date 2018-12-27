@@ -12,7 +12,7 @@ This struct is ***roughly modeled*** after the ideas that the Rust languages Res
 Result is used to specify a value or an error returned from a Service method. Something may have gone wrong during that process and rather than throw the error at that point, we can instead, throw that in our API/Application layer in a more friendly way or ignore the error if it makes sense. Services can also more consistenly handle the errors of other services returning these result objects.
 
 ### Result Examples
-The following code and text also exists as a unit test in the [ResultTests.cs](/NullFight.Tests/ResultsTests.cs) file.
+***The following code and comments also exist as a unit test in the [ResultTests.cs](/NullFight.Tests/ResultsTests.cs) file.***
 
 Use the static methods to create results
 ```csharp
