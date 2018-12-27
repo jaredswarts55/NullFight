@@ -114,7 +114,7 @@ pattern matching.
     switch (intResult1.GetValueOrError())
     {
         case int myInt:
-        Shouldn't hit this
+            // Shouldn't hit this
             Assert.IsTrue(false);
             break;
         case Exception ex:
