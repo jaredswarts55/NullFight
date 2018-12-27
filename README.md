@@ -9,10 +9,9 @@ Fights the good fight against NullReferenceException in .NET using an *Option* s
 
 This struct is ***roughly modeled*** after the ideas that the Rust languages Result has.
 
-### Reasoning
-This struct is used to specify a value returned from a Service method. Something may have gone wrong during that process and rather than throw the error at that point, we can instead, throw that in our API/Application layer in a more friendly way or ignore the error if it makes sense. This type of object also allows us to have service methods call other service methods and more cleanly and consistenly handle errors that occur by either bubbling them up or dealing with them in some other way that makes sense in your application.
+Result is used to specify a value or an error returned from a Service method. Something may have gone wrong during that process and rather than throw the error at that point, we can instead, throw that in our API/Application layer in a more friendly way or ignore the error if it makes sense. Services can also more consistenly handle the errors of other services returning these result objects.
 
-### Examples
+### Result Examples
 The following code and text also exists as a unit test in the [ResultTests.cs](/NullFight.Tests/ResultsTests.cs) file.
 
 Use the static methods to create results
