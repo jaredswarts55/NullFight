@@ -2,6 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Summary>An Option and Result struct with various extension methods.</Summary>
+    <Description>An Option and Result struct with various extension methods.</Description>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>NullFight</AssemblyName>
+    <PackageId>NullFight</PackageId>
+    <PackageProjectUrl>https://github.com/jaredswarts55/NullFight</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/jaredswarts55/NullFight/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/jaredswarts55/NullFight</RepositoryUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
   <ItemGroup>
