@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Runtime.Serialization;
 
 namespace NullFight
 {
     [DebuggerDisplay("{!HasValue ? \"Some('\"+Value.ToString()+\"')\" : \"None\", nq}")]
+    [DataContract]
     public partial struct Option<T>
     {
         /// <summary>
@@ -18,8 +20,10 @@ namespace NullFight
         }
 
 
+        [DataMember]
         public T Value { get; }
 
+        [DataMember]
         public bool HasValue { get; }
 
         /// <summary>

@@ -42,6 +42,15 @@ namespace NullFight
         }
 
         /// <summary>
+        /// An exception can be implicitly cast to a result error
+        /// </summary>
+        /// <param name="ex"></param>
+        public static implicit operator Result<K>(Exception ex)
+        {
+            return new Result<K>(default(K), ex);
+        }
+
+        /// <summary>
         /// Get the value from the result. Only use if the value has been checked for before. MAKE SURE YOU HAVE CHECKED HasValue.
         /// </summary>
         /// <returns>Value if present</returns>
@@ -61,6 +70,15 @@ namespace NullFight
             if (HasValue)
                 throw new ResultException("UnwrapException failed because no Exception was present. Check for the value before using UnwrapException");
             return Exception;
+        }
+
+        public bool HasErrorWithType<TL>() where TL : Exception
+        {
+            if (HasValue)
+                return false;
+            if (Exception is TL)
+                return true;
+            return false;
         }
 
         /// <summary>
