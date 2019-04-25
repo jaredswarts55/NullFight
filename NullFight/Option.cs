@@ -21,10 +21,10 @@ namespace NullFight
 
 
         [DataMember]
-        public T Value { get; }
+        public T Value { get; private set; }
 
         [DataMember]
-        public bool HasValue { get; }
+        public bool HasValue { get; private set; }
 
         /// <summary>
         /// Returns the Value unless this option is a None. In that case it returns the passed in value.
@@ -35,7 +35,7 @@ namespace NullFight
         {
             return HasValue ? Value : valueIfNone;
         }
-      
+
         /// <summary>
         /// Returns the value if present or throws an error
         /// </summary>
