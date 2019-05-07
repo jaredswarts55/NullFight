@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 
 namespace NullFight
 {
-    [DebuggerDisplay("{!HasValue ? \"Some('\"+Value.ToString()+\"')\" : \"None\", nq}")]
+    [DebuggerDisplay("{HasValue ? \"Some('\"+Value.ToString()+\"')\" : \"None\", nq}")]
     [DataContract]
     public partial struct Option<T>
     {
