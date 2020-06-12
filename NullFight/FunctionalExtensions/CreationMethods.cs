@@ -100,6 +100,15 @@ namespace NullFight
         }
 
         /// <summary>
+        /// Returns a Result with a value of an Option with a value. That Option will be a 'None' if the value is null.
+        /// </summary>
+        /// <returns>A Result with a value of 'Some' if the value is not null</returns>
+        public static Result<Option<T>> SomeResultNotDefault<T>(T value)
+        {
+            return new Result<Option<T>>(new Option<T>(value, !value.Equals(default(T))), null);
+        }
+
+        /// <summary>
         /// Returns a Option with HasValue set to false. Known as a 'None'
         /// </summary>
         /// <returns>Returns a 'None'</returns>
