@@ -13,8 +13,27 @@ namespace NullFight.Tests
     public class OptionTests
     {
         [TestMethod]
-        public async Task Option_Examples_Work()
+        public void MapValue_WithOptionValue_ReturnsMappedValue()
         {
+            var option = Some("1");
+            var mappedOption = option.MapValue(int.Parse);
+            Assert.AreEqual(1, mappedOption.Value);
+        }
+
+        [TestMethod]
+        public void Match_WithOptionValue_ReturnsMappedValue()
+        {
+            var option = Some("1");
+            var value = option.Match(int.Parse, () => 2);
+            Assert.AreEqual(1, value);
+        }
+
+        [TestMethod]
+        public void Match_WithOptionNone_ReturnsMappedValue()
+        {
+            Option<string> option = None();
+            var value = option.Match(int.Parse, () => 2);
+            Assert.AreEqual(2, value);
         }
     }
 }

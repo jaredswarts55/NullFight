@@ -3,7 +3,9 @@
 namespace NullFight
 {
     /// <summary>
-    /// This is a serializable version of a result object. Known types are good times.
+    /// This is a DataContract serializable version of a result object. The unknown type of 'Exception'
+    /// makes this a tough cookie to crack when it comes to sending this over the wire using that type of
+    /// serialization.
     /// The property containing the exception was very rarely a base exception.
     /// </summary>
     /// <typeparam name="T">Value Type</typeparam>
