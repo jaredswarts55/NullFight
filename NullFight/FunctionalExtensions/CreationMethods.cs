@@ -24,6 +24,16 @@ namespace NullFight
         }
 
         /// <summary>
+        /// Returns an Option with HasValue set to true if the value is not default(T)
+        /// </summary>
+        /// <param name="value">Value to check for default</param>
+        /// <returns>Option of type value</returns>
+        public static Option<T> SomeNotDefault<T>(T value)
+        {
+            return new Option<T>(value, !value.Equals(default(T)));
+        }
+
+        /// <summary>
         /// Returns an Option with HasValue set to true if the someCheckFunc comes back true
         /// </summary>
         /// <param name="value">Value for the Option</param>
