@@ -100,7 +100,7 @@ namespace NullFight
         }
 
         /// <summary>
-        /// Returns a Result with a value of an Option with a value. That Option will be a 'None' if the value is null.
+        /// Returns a Result with a value of an Option with a value. That Option will be a 'None' if the value is default.
         /// </summary>
         /// <returns>A Result with a value of 'Some' if the value is not null</returns>
         public static Result<Option<T>> SomeResultNotDefault<T>(T value)
