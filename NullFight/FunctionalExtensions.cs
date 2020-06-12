@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 using NullFight.Exceptions;
 
 namespace NullFight
@@ -17,7 +18,6 @@ namespace NullFight
         /// <param name="value">Value to check for null</param>
         /// <returns>Option of type value</returns>
         public static Option<T> SomeNotNull<T>(T value)
-            where T : class
         {
             return new Option<T>(value, value != null);
         }
@@ -84,7 +84,6 @@ namespace NullFight
         /// </summary>
         /// <returns>A Result with a value of 'Some' if the value is not null</returns>
         public static Result<Option<T>> SomeResultNotNull<T>(T value)
-            where T : class
         {
             return new Result<Option<T>>(new Option<T>(value, value != null), null);
         }
@@ -291,6 +290,18 @@ namespace NullFight
             if (!result.Unwrap().HasValue)
                 return ResultError(errorOnNone ?? "No value passed to method");
             return await toBind(result.Unwrap().Value).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Maps the Options Value if both the result and the option have a value.
+        /// </summary>
+        /// <returns></returns>
+        public static async Task<Result<Option<TV>>> MapOption<TK, TV>(this Task<Result<Option<TK>>> resultObject, Func<TK, TV> optionValueMap)
+        {
+            var result = await resultObject.ConfigureAwait(false);
+            if (!result.HasValue)
+                return result.MapValue(x => default(Option<TV>));
+            return result.MapValue(x => x.MapValue(optionValueMap));
         }
 
         /// <summary>
