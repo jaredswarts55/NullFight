@@ -14,7 +14,7 @@
     <RepositoryUrl>https://github.com/jaredswarts55/NullFight</RepositoryUrl>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-    <Version>1.4.2</Version>
+    <Version>1.5.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

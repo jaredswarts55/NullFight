@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -34,6 +35,14 @@ namespace NullFight.Tests
             Option<string> option = None();
             var value = option.Match(int.Parse, () => 2);
             Assert.AreEqual(2, value);
+        }
+
+        [TestMethod]
+        public void FirstOrOption_WithQueryableWithItems_ReturnsSome()
+        {
+            var testCollection = new int[]{1,2,3 }.AsQueryable();
+            var item = testCollection.FirstOrOption();
+
         }
     }
 }
